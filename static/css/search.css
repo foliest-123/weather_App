@@ -1,0 +1,44 @@
+
+
+.city{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar > form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+ form > input{
+    width: 40%;
+    padding: 10px 10px;
+    color: black;
+    font-size: larger;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form > button{
+    padding: 12px 10px;
+background-color: black;
+color: white;
+font-weight: 800;
+text-transform: uppercase;
+border: none;
+}
+#cityList{
+    display: flex;
+    gap: 13px;
+    width: 37%;
+    left: 350px;
+    position: relative;
+}
+#cityList >li{
+list-style: none;
+}
+.city{
+    background-color: whitesmoke;
+}

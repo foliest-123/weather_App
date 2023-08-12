@@ -1,0 +1,89 @@
+body{
+    padding: 0;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8),rgba(29, 27, 27, 0.6),rgba(0, 0, 0, 0.6), rgba(65, 65, 65, 0.8)), url('https://4kwallpapers.com/images/wallpapers/waves-macos-big-sur-colorful-5k-7680x4320-4992.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border-radius: 20px;
+    /* gap: 40px; */
+    flex-direction: column;
+    /* padding: 10px 15px; */
+    height: 90vh;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.details{
+    display: flex;
+    gap:100px;
+    padding: 16px 0 30px 0;
+}
+.details > h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+.image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+.image > img{
+    height: 12vh;
+}
+.image > span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.det_1{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+}
+.det_1 > span{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+.days{
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+}
+.city{
+    height: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.city > button{
+    list-style:none;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+form{
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+form > input{
+    height: 5vh;
+    width: 40%;
+}

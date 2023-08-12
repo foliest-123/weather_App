@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 90vh;
+   background-image: url('https://previews.123rf.com/images/ponsuwan/ponsuwan1209/ponsuwan120900047/15306841-rough-wall-background-gray-color.jpg');
+background-position: cover;
+}
+.wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+border: 3px solid grey;
+border-radius: 10px;
+gap: 60px;
+}
+.left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img > p{
+    width: 350px; /* Adjust this width as needed */
+    white-space: normal;
+    line-height: 20px;
+}
+.right{
+    display: flex;
+}

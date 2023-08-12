@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather.css') }}">
+    <title>Weather</title>
+</head>
+<body>
+   
+
+    <form method="POST" action="/search">
+        
+        <input type="text"  id="countryInput" name="country" placeholder="Enter City..." value=""/>
+        <button>Search</button>
+    </form>
+    <div id="cityList" class="city">
+        
+    </div>
+    
+    <!-- <div class="wrap"> -->
+
+        <div class="container">
+            <div class="title">
+                <h3>Lorem ipsum dolor sit.</h3>
+                
+            </div>
+            <div class="details">
+                <div class="image">
+
+                    <img src="https://www.transparentpng.com/thumb/weather/download-weather-png-26.png" alt="sun"/>
+                    <span>{{desc}}</span>
+                </div>
+                <h2>{{deg}}°C</h2>
+                <div class="det_1">
+
+                    <span>wind:{{windspeed}}kmph</span>
+                    <span>humidity:{{humidity}}</span>
+                    <span>pressure:{{pressure}}</span>
+                </div>
+            </div>
+            <div class="days">
+                <div class="day1">
+                    <p>Sat</p>
+                    <span>image</span>
+                    <p>14 °C</p>
+                </div>
+                <div class="day2">
+                    <p>Sun</p>
+                    <span>image</span>
+                    <p>14 °C</p>
+                </div>
+                <div class="day3">
+                    <p>Mon</p>
+                    <span>image</span>
+                    <p>14 °C</p>
+                </div>
+                <div class="day4">
+                    <p>Tue</p>
+                    <span>image</span>
+                    <p>14 °C</p>
+                </div>
+                <div class="day4">
+                    <p>Tue</p>
+                    <span>image</span>
+                    <p>14 °C</p>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+    <script>
+        const countryInput = document.getElementById('countryInput');
+        const cityList = document.getElementById('cityList');
+    
+        countryInput.addEventListener('input', () => {
+            const inputValue = countryInput.value;
+            fetch(`/filter?country=${inputValue}`)
+                .then(response => response.json())
+                .then(data => {
+                    
+                    cityList.innerHTML = '';
+    
+                    // Add filtered cities to the list
+                    data.forEach(row => {
+                        const city =row[1]
+                        const listItem = document.createElement('button');
+                        listItem.textContent = city;
+                        cityList.appendChild(listItem);
+                    });
+                });
+        });
+    
+    
+        </script>
+</body>
+</html>
