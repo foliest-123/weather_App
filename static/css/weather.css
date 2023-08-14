@@ -6,7 +6,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+    color: rgb(216, 209, 209);
 }
 
 .container{
@@ -15,9 +15,7 @@ body{
     align-items: center;
     height: 100vh;
     border-radius: 20px;
-    /* gap: 40px; */
     flex-direction: column;
-    /* padding: 10px 15px; */
     height: 90vh;
 }
 .title{
@@ -28,7 +26,7 @@ body{
 .details{
     display: flex;
     gap:100px;
-    padding: 16px 0 30px 0;
+    padding: 15px 0 30px 0;
 }
 .details > h2{
     font-size: 30px;
