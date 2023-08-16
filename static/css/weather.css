@@ -18,10 +18,9 @@ body{
     flex-direction: column;
     height: 90vh;
 }
-.title{
+.title>h3{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    word-spacing: 10px;
 }
 .details{
     display: flex;

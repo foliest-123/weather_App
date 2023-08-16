@@ -24,6 +24,7 @@ h1{
     height: 0;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 10px 0 0 10px;
+    color: brown;
 }
 p {
     overflow: hidden;
@@ -52,10 +53,10 @@ span{
 .left > p{
     font-size: 17px;
     width: 360px;
-    color: grey;
+    color: rgb(168, 51, 51);
     font-family: system-ui;
 }
-.left>button{
+.left>a>button{
     padding: 5px 10px;
 background-color: blanchedalmond;
 color: black;
@@ -63,5 +64,10 @@ font-weight: bold;
 cursor: pointer;
 border-radius: 2px;
 border: none;
-
+font-weight: bolder;
+font-size: 15px;
+transition: .5s;
+}
+.left>a>button:hover{
+    color: red;
 }

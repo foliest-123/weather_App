@@ -23,8 +23,11 @@ def index():
 @app.route('/weather',methods=["GET","POST"])
 def weather():
     api_key = "863242cfb2b1d357e6093d9a4df19a4b"
+    search_data = request.form.get('search_data')
+    print(search_data)
     if request.method == "POST":
          data = request.form.get('country')
+         print(data)
          if data is not None:
           query = "SELECT countryname FROM country WHERE countryname LIKE %s"
         
@@ -39,27 +42,25 @@ def weather():
            return "Invalid input"  
     
 # API endpoint URL
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={'united states'}&visiblity&appid={api_key}&units=celcius&pressure=units"
+    country="japan"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={search_data}&visiblity&appid={api_key}&units=celcius&pressure=units"
     response = requests.get(url)
 # Check if the request was successful
     if response.status_code == 200:
-     data = response.json()
-     weathers=data['weather'][0]['main']
-     desc=data['weather'][0]['description']
-     windspeed=data['wind']['speed']
-     pressure=data['main']['pressure']
-     humidity=data['main']['humidity']
-     deg=data['wind']['deg']
-     print(deg)
-     return render_template('weather.html',desc=desc,windspeed=windspeed,humidity=humidity,pressure=pressure,deg=deg)    
+     weather_data = response.json()
+     weathers=weather_data['weather'][0]['main']
+     desc=weather_data['weather'][0]['description']
+     windspeed=weather_data['wind']['speed']
+     pressure=weather_data['main']['pressure']
+     humidity=weather_data['main']['humidity']
+     deg=weather_data['wind']['deg']
+     title=weather_data['name']
+     con=weather_data['sys']['country']
+     return render_template('weather.html',desc=desc,windspeed=windspeed,humidity=humidity,pressure=pressure,weathers=weathers,deg=deg,title=title,con=con)    
     else:
      print("Failed to retrieve weather data",response.status_code)
      return render_template('weather.html')
 
-@app.route("/search",methods=["GET","POST"])
-def search():
-       
-       return render_template('search.html')
 @app.route('/filter')
 def filter():
     country = request.args.get('country', default='', type=str)

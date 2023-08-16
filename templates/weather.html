@@ -9,10 +9,11 @@
 <body>
    
 
-    <form method="POST" action="/search">
+    <form method="POST" action="/weather">
         
         <input type="text"  id="countryInput" name="country" placeholder="Enter City..." value=""/>
-        <button>Search</button>
+        <input type="hidden" id="searchData" name="search_data" value=""/>
+        <button type="submit">Search</button>
     </form>
     <div id="cityList" class="city">
         
@@ -22,7 +23,7 @@
 
         <div class="container">
             <div class="title">
-                <h3>Lorem ipsum dolor sit.</h3>
+                <h3>{{title}} {{con}} {{weathers}}</h3>
                 
             </div>
             <div class="details">
@@ -68,7 +69,7 @@
             </div>
         </div>
     <!-- </div> -->
-    <script>
+    <!-- <script>
         const countryInput = document.getElementById('countryInput');
         const cityList = document.getElementById('cityList');
     
@@ -91,6 +92,15 @@
         });
     
     
+        </script> -->
+        <script>
+            const countryInput = document.getElementById('countryInput');
+            const searchDataInput = document.getElementById('searchData');
+            
+            countryInput.addEventListener('input', () => {
+                searchDataInput.value = countryInput.value;
+            });
         </script>
+        
 </body>
 </html>
